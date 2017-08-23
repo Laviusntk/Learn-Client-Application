@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+	<head>
+			<title>Learn</title>
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+			<!-- <link  rel="stylesheet" type="text/css" href="./css/normalize.css"> -->
+			<link  rel="stylesheet" type="text/css" href="./css/style.css">
+			<script src="./js/jquery.min.js"></script>
+			<style>
+			table {
+			    border-collapse: collapse;
+			    width: 750px;
+					overflow: hidden;
+					border: 1px solid #dddddd;
+			}
+
+			td, th {
+			    border: 1px solid #dddddd;
+			    text-align: left;
+			    padding: 8px;
+			}
+			td:nth-child(2){
+				width: 40px;
+			}
+			/*td:nth-child(3){
+				width: 300px;
+			}*/
+			tr{
+				border-bottom: 1px solid #dddddd;
+			}
+			tr:nth-child(even) {
+			    /*background-color: #dddddd;*/
+			}
+			tr:last-child{
+				border-bottom: 1px solid #dddddd;
+			}
+			tr:first-child{
+				border-top: none;
+				width: 30px;
+			}
+			tbody{
+				height: 100%;
+				overflow: hidden;
+				border-top: 1px solid #dddddd;
+			}
+			thead{
+				width: 100%;
+			}
+			tfoot{
+				position: fixed;
+				left: 50px;
+				top: 500px;
+				width: 600px;
+			}
+			.site-folder{
+				cursor: pointer;
+			}
+			.file i{
+				float: right;
+			}
+			#repoTable td:last-child{
+				border-right: none;
+				text-align: center;
+			}
+			.repo-folder i{
+				float: right;
+			}
+			</style>
+
+	</head>
+	<body>
+		<div id="MainView" >
+			<div id="HeaderView"></div>
+			<div id="FolderView"></div>
+			<center>
+				<div id="loginView">
+					<form>
+						<label><h1>SIGN IN</h1></label>
+						<input type="text"  class="username" placeholder="Campus ID">
+						<input type="password" class="password" placeholder="Password">
+						<a class="button login" id="loginButton">Sign In</a>
+					</form>
+				</div>
+				<div class="loader"><img src="./img/loader1.gif"  width="50px" height="50px" /><br>Loading...</div>
+			</center>
+		</div>
+
+		<section class="tabs" id="ResourceView" >
+			            <input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+				        <label for="tab-1" class="tab-label-1">Vula</label>
+
+			            <input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+				        <label for="tab-2" class="tab-label-2">Past Material</label>
+
+					    <div class="clear-shadow"></div>
+
+				        <div class="content" class="col-sm-8" style="background-color:lavender;">
+					        <div class="content-1" >
+										<li class="pathHolder"  >
+											<a class="path sites" name="sites">Sites</a>
+											<a class="path sites" name="sites"> / </a>
+											<a  class="path course" name="course" > Courses</a>
+											<a class="path course" name="course"> / </a>
+										</li><br>
+										<ul id="fileView">
+										<table  id="vulaTable">
+											<tbody id="VulaResourceTable"></tbody>
+											<tfoot id="vula-button-controlls">
+												<tr>
+													<td colspan="3"><center><button class="upload-selected button blue">upload selected</button></center></td>
+													<td colspan="3" style="width: auto;"><center><button class="select-all button blue" >select all</button></center></td>
+												<tr>
+											</tfoot>
+										  </table>
+										</ul>
+
+						    </div>
+					        <div class="content-2">
+										<li class="pathHolder2">
+											<a class="path2 courseClass" name="course">Course</a>
+											<a class="path2 courseClass" name="course"> / </a>
+											<a  class="path2 yearClass" name="year" > Year</a>
+											<a class="path2 yearClass" name="year"> / </a>
+										</li><br>
+										<ul id="fileView">
+										<table  id="repoTable">
+											<tbody id="RepoResourceTable"></tbody>
+											<tfoot id="repo-button-controlls">
+												<tr>
+													<td colspan="3"><center><button class="upload-selected button blue">upload selected</button></center></td>
+													<td colspan="3" style="width: auto;"><center><button class="select-all button blue" >select all</button></center></td>
+												<tr>
+											</tfoot>
+										  </table>
+										</ul>
+						    </div>
+				        </div>
+					</section>
+		        </div>
+
+		<!-- <ul id="contentView">
+			<ul id="tabs">
+				<div id="FedoraTab">Past Material</div>
+				<div id="VulaTab">Vula</div>
+			</ul>
+				<li id="HeaderView">
+					<li class="pathHolder">
+						<a class="path 1" name="home">Home</a>
+						<a class="path home" name="home"> / </a>
+						<a  class="path course" name="course" > Courses</a>
+						<a class="path course" name="home"> / </a>
+						<a  class="path year" name="year"> 2016</a>
+					</li>
+				</li>
+			<ul id="MainContent">
+				<h1>Main Content here</h1>
+			</ul>
+		</ul> -->
+		<script src="./js/Client.js"></script>
+	</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+			<title>Learn</title>
+			<script src="//apis.google.com/js/platform.js?onload=start"> </script>
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" type="text/css">
+			<link  rel="stylesheet" type="text/css" href="./css/style.css">
+			<link  rel="stylesheet" type="text/css" href="./css/normalize.css">
+			<script src="./js/jquery.min.js"></script>
+	</head>
+	<body>
+
+<div id="MainView">
+	<ul id="HeaderView">
+		<li class="toolbar" >
+			<a href="#" class="button blue">Synchronize</a>
+			<a href="#" class="button default">Dowbload Course</a>
+			<a href="#" class="button red">Logout</a>
+		</li>
+		<li class="pathHolder">
+			<a class="path 1" name="home">Home</a>
+			<a class="path home" name="home"> / </a>
+			<a  class="path course" name="course" > Courses</a>
+			<a class="path course" name="home"> / </a>
+			<a  class="path year" name="year"> 2016</a>
+		</li>
+	</ul>
+	<ul id="FolderView"></ul>
+	<div class="login-wrap">
+		<div class="login-html">
+								<center>
+			<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+			<div class="login-form">
+				<div class="sign-in-htm">
+					<div class="group">
+						<div id="signInButton">
+							<span class="g-signin"
+							data-scope="openid email"
+							data-clientid="625446479040-sc814kvcpuhr369qr58h9llb37m1u5ll.apps.googleusercontent.com"
+							data-redirecturi="postmessage"
+							data-accesstype="offline"
+							data-cookiepolicy="single_host_origin"
+							data-callback="signInCallback"
+							data-approvalprompt="force">
+						</span>
+	</div></div>
+				</div>
+				<div class="sign-up-htm">
+			<div class="group">
+				<label for="pass" class="label">Password</label>
+				<input id="pass" type="password" class="input" data-type="password">
+			</div>
+			<div class="group">
+				<label for="pass" class="label">Repeat Password</label>
+				<input id="pass" type="password" class="input" data-type="password">
+			</div>
+			<div class="group">
+				<input type="submit" class="button" value="Sign Up">
+			</div>
+					</center>
+				</div>
+			</div>
+		</div>
+	</div>
+</ul>
+</div>
+
+<div id="result"></div>
+
+<script>
+
+</script>
+<script src="./js/Service.js"></script>
+<script src="./js/testData.js"></script>
+<script src="./js/script.js"></script>
+	</body>
+</html> -->
